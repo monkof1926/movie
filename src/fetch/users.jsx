@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
 import { useState } from "react";
 
-let [users, setUsers] = useState([]);
-let [status, setStatus] = useState("idle");
 let userURL = "https://localhos7001/api/user/";
 
 async function GetUsers(){
+    let [users, setUsers] = useState([]);
+    let [status, setStatus] = useState("idle");
+
     try {
         const res = await fetch(userURL);
         const json = await res.json();
@@ -14,9 +14,20 @@ async function GetUsers(){
     }catch(e){
         setStatus("404 can't find user");
     }
-
+    return (
+        <div>
+            {(status === "done")} &&
+            <p>{users.map(u => u.GetUsers)
+                     .join(",")
+            }
+            </p>
+        </div>
+    );
 }
 async function GetUser({username}){
+    let [users, setUsers] = useState([]);
+    let [status, setStatus] = useState("idle");
+
     try {
         const res = await fetch(userURL + "/GetUser");
         const json = await res.json(username);
@@ -25,8 +36,17 @@ async function GetUser({username}){
     }catch(e){
         setStatus("404 can't find user");
     }
+    return (
+        <div>
+            {(status === "done")} && 
+            <p>{users.map(u => u.GetUser)}</p>
+        </div>
+        );
 }
 async function UpdateUser(username, password){
+    let [users, setUsers] = useState([]);
+    let [status, setStatus] = useState("idle");
+
     try {
         const res = await fetch(userURL);
         const json = await res.json(username, password);
@@ -38,19 +58,35 @@ async function UpdateUser(username, password){
     }catch(e){
         setStatus("404 can't find user")
     }
+    return(
+        <div>
+            {(status === "done")} &&
+            <p>{users.map(u => u.UpdateUser)}</p>
+        </div>
+    );
 }
 
 async function DeleteUser(username, password){
+    let [users, setUsers] = useState([]);
+    let [status, setStatus] = useState("idle");
+    
     try{
         const res = await fetch(userURL);
         const json = await res.json(username, password);
-        db.collection('username').findOneAndDelete({username: username}, (err,results) => {
-            if (err) return res.send(500, err)
+        userURL.collection('username').findOneAndDelete({username: username}, (e,results) => {
+            if (e) return res.send(500, e)
+            setUsers(json.username.results);
             setStatus('User is delete'+ results);
         });
     }catch(e){
         setStatus("404 can't find user")
     }
+    return(
+        <div>
+            {(status === "done")} && 
+            <p>{users.map(u => u.DeleteUser)}</p>
+        </div>
+    );
 }
 
 async function CreateUser(){
