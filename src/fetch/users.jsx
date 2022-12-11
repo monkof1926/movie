@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-let userURL = "https://localhos7001/api/user/";
+let userURL = "https://localhost:7101/api/user/";
 
 async function GetUsers(){
     let [users, setUsers] = useState([]);
     let [status, setStatus] = useState("idle");
 
     try {
-        const res = await fetch(userURL);
+        const res = await fetch(userURL + "GetUsers");
         const json = await res.json();
         setUsers(json.results);
         setStatus("done");
