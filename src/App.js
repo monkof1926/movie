@@ -1,23 +1,14 @@
 import './App.css';
-import './fetch/users'
-import { GetUsers } from './fetch/users';
-import { 
+import { /*
   Routes, Route, Link, NavLink, useParams, Outlet
-} from "react-router-dom";
+*/} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Home } from './components/Home';
-import { useState } from 'react';
-
-
-
+import "./object/poster";
 
 function App() {
-  <GetUsers GetUsers/>
-  const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="App">
       <>
-      <p>{GetUsers}</p>
       </>
     </div>
   );

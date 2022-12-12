@@ -5,6 +5,7 @@ function Poster() {
         <>
         <img src="https://localhos7001/api/movie/"/>
         <img src={'https://localhos7001/api/movie/'}/>
+        <p>This it the most watch movies</p>
         </>
     );
 }

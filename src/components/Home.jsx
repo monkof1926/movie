@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
-import { GetUsers } from "./fetch/users";
-import {Navgationbar} from "./object/navBar";
-import {Poster} from "./object/poster";
+import { GetUsers } from "./fetch/users.jsx";
+import {Navgationbar} from "./object/navBar.jsx";
+import {Poster} from "./object/poster.jsx";
+
+
 
 const Home = () => {
     return (
@@ -9,15 +11,14 @@ const Home = () => {
         <div>
         <h1>Home</h1>
         <>
-        <Navgationbar navgationbar/>
+        <div>{Navgationbar()}</div>
         <Poster poster/>
         <p>Hallo testing</p>
         <GetUsers GetUsers/>
-        
         </>
         </div>
         )
     );
 }
 
-export {Home};
+export default Home;
