@@ -1,13 +1,12 @@
 import React from "react";
 
 function Poster() {
-    return(
-        <>
-        <img src="https://localhos7001/api/movie/"/>
-        <img src={'https://localhos7001/api/movie/'}/>
-        <p>This it the most watch movies</p>
-        </>
-    );
+  return (
+    <div>
+      <p>This is some text.</p>
+    </div>
+  );
 }
 
-export default Poster;
+
+export { Poster };

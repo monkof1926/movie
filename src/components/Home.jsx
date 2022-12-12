@@ -1,24 +1,19 @@
 import React, { useEffect } from "react";
-import { GetUsers } from "./fetch/users.jsx";
-import {Navgationbar} from "./object/navBar.jsx";
-import {Poster} from "./object/poster.jsx";
-
-
+import { Poster } from "../object/poster.jsx";
+import Navgationbar from "../object/navBar.jsx";
 
 const Home = () => {
-    return (
-        useEffect(
-        <div>
-        <h1>Home</h1>
-        <>
-        <div>{Navgationbar()}</div>
-        <Poster poster/>
-        <p>Hallo testing</p>
-        <GetUsers GetUsers/>
-        </>
-        </div>
-        )
-    );
+  useEffect(() => {
+    // Code to run when the component is rendered or updated
+  });
+
+  return (
+    <div>
+      <Navgationbar />
+      <h1>Home</h1>
+      <Poster />
+    </div>
+  );
 }
 
-export default Home;
+export { Home };
