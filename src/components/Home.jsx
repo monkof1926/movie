@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Poster } from "../object/poster.jsx";
 import Navgationbar from "../object/navBar.jsx";
+import GetUsers from "../fetch/users";
+
 
 const Home = () => {
   useEffect(() => {
@@ -10,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <Navgationbar />
-      <h1>Home</h1>
+      <p>Hallo</p>
       <Poster />
     </div>
   );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 let userURL = "https://localhost:7101/api/user/";
 
@@ -7,20 +7,25 @@ async function GetUsers(){
     let [status, setStatus] = useState("idle");
 
     try {
-        const res = await fetch(userURL + "GetUsers");
+        const res = await fetch(userURL); 
         const json = await res.json();
         setUsers(json.results);
         setStatus("done");
     }catch(e){
         setStatus("404 can't find user");
     }
+
+    useEffect(() => {
+        GetUsers();
+    }, [])
+
     return (
         <div>
-            {(status === "done")} &&
-            <p>{users.map(u => u.GetUsers)
+            {(status === "done")} 
+            {users.map((userObj) => (<li>key = {userObj.username}</li>))
                      .join(",")
             }
-            </p>
+            
         </div>
     );
 }
@@ -77,6 +82,7 @@ async function DeleteUser(username, password){
             if (e) return res.send(500, e)
             setUsers(json.username.results);
             setStatus('User is delete'+ results);
+            <p>Hallo</p>
         });
     }catch(e){
         setStatus("404 can't find user")
@@ -94,4 +100,4 @@ async function CreateUser(){
 }
 
 
-export{GetUsers, GetUser, UpdateUser, DeleteUser, CreateUser};
+export default {GetUsers, GetUser, UpdateUser, DeleteUser, CreateUser};
