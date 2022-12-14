@@ -6,29 +6,34 @@ async function GetUsers(){
     let [users, setUsers] = useState([]);
     let [status, setStatus] = useState("idle");
 
+    if (status === "idle"){
     try {
-        const res = await fetch(userURL); 
+        const res = await fetch("https://localhost:7101/api/user" + "/GetUsers/"); 
         const json = await res.json();
         setUsers(json.results);
         setStatus("done");
     }catch(e){
         setStatus("404 can't find user");
     }
-
+    }
     useEffect(() => {
         GetUsers();
     }, [])
 
     return (
+        
         <div>
             {(status === "done")} 
             {users.map((userObj) => (<li>key = {userObj.username}</li>))
                      .join(",")
             }
-            
+            <div>{(status === "404 can't find user")} && <p> 404 fejl
+            </p></div>
         </div>
+        
     );
 }
+
 async function GetUser({username}){
     let [users, setUsers] = useState([]);
     let [status, setStatus] = useState("idle");
