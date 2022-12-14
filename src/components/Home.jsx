@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { Poster } from "../object/poster.jsx";
 import Navgationbar from "../object/navBar.jsx";
-import GetUsers from "../fetch/users";
+import { UserList } from "../fetch/users";
 
 
 const Home = () => {
   useEffect(() => {
-    GetUsers();
     // Code to run when the component is rendered or updated
   });
 
@@ -14,10 +13,8 @@ const Home = () => {
     <div>
       <UserList />
       <Navgationbar />
-      <GetUsers GetUsers/>
       <p>Hallo</p>
       <Poster />
-      
     </div>
   );
 }
