@@ -1,6 +1,5 @@
 import React from "react";
 
-async function search() {
+async function search(searchString) {
     
-
 }

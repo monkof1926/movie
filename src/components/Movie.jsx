@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Navgationbar from "../object/navBar.jsx";
 
-const Movie = () => {
+const Movie = (tconst) => {
       useEffect(() => {
             // Code to run when the component is rendered or updated
           });
