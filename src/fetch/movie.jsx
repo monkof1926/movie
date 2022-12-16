@@ -29,7 +29,7 @@ function Movie(){
 
     async function GetMovie(tconst){
         try{
-            const res = await(movieURL + "/GetMovie")
+            const res = await(movieURL)
             const json = await res.json(tconst);
             console.log(json);
 
