@@ -5,12 +5,13 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import {Home} from "../components/Home";
+import {Movie} from "../components/Movie";
 
-
-function Navgationbar(){
+const Navgationbar = () => {
     return(
         <>
-        <Navbar bg = "light" expand = "lg">
+        <Navbar bg = "light" expand = "lg" className="Navbar">
             <Container fluid>
                 <Navbar.Brand href = "#">Navbar scroll</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -20,8 +21,8 @@ function Navgationbar(){
                     style={{ maxHeight: '100px'}}
                     navbarScroll
                     >
-                    <Nav.Link href="#src\components\Home.jsx">Home</Nav.Link>
-                    <Nav.Link href="./components/Movie">Movie</Nav.Link>
+                    <Nav.Link href="/" onSelect={<Home/>}>Home</Nav.Link>
+                    <Nav.Link href="../Movie " onSelect={<Movie/>}>Movie</Nav.Link>
                     <NavDropdown title = "Link" id = " navbarScrollingDropdown">
                         <NavDropdown.Item href= "#action3">Action</NavDropdown.Item>
                         <NavDropdown.Divider />
