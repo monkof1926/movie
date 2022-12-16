@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Navgationbar from "../object/navBar.jsx";
+import MyNavBar from "../object/MyNavBar";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -13,7 +13,7 @@ const Movie = () => {
     return (
       <div>
         <h1>Home</h1>
-        <Navgationbar />
+       
 
         <Container fluid>
             <Row>MovieTitle</Row>

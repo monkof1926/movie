@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {Home} from './components/Home';
 import {Movie} from './components/Movie';
-import {navBar} from './object/navBar';
+import MyNavBar from './object/MyNavBar';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,9 +14,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/'    element = {<navBar />} >
-          <Route index          element = {<Home/>} />
-          <Route path='Movie' element = {<Movie />} />
+        <Route path='/'    element = {<MyNavBar />} >
+          <Route path='/Home'         element = {<Home/>} />
+          <Route path='/Movie' element = {<Movie />} />
         </Route>
       </Routes>
       <App />

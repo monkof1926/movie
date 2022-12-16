@@ -5,8 +5,9 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Outlet } from "react-router-dom";
 
-const navBar = () => {
+const MyNavBar = () => {
     return(
         <>
         <Navbar bg = "light" expand = "lg" className="Navbar">
@@ -19,8 +20,8 @@ const navBar = () => {
                     style={{ maxHeight: '100px'}}
                     navbarScroll
                     >
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="../Movie ">Movie</Nav.Link>
+                    <Nav.Link href="/Home">Home</Nav.Link>
+                    <Nav.Link href="/Movie">Movie</Nav.Link>
                     <NavDropdown title = "Link" id = " navbarScrollingDropdown">
                         <NavDropdown.Item href= "#action3">Action</NavDropdown.Item>
                         <NavDropdown.Divider />
@@ -48,8 +49,10 @@ const navBar = () => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+        <Outlet />
         </>
+
     );
 }
 
-export default navBar;
+export default MyNavBar;
