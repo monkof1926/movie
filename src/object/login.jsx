@@ -13,7 +13,7 @@ function loginForm(){
                     Please enter your email
                 </Form.Text>
             </Form.Group>
-
+                
             {/Form til indførsel af password/}
             <Form.Group classname ="mb-3" controlID ="formBasicPassword">
                 <Form.Label>Password</Form.Label>
