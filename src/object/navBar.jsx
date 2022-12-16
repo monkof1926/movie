@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import {Home} from "../components/Home";
 import {Movie} from "../components/Movie";
+import { NavLink } from "react-router-dom";
 
 const Navgationbar = () => {
     return(
@@ -21,8 +22,8 @@ const Navgationbar = () => {
                     style={{ maxHeight: '100px'}}
                     navbarScroll
                     >
-                    <Nav.Link href="/" onSelect={<Home/>}>Home</Nav.Link>
-                    <Nav.Link href="../Movie " onSelect={<Movie/>}>Movie</Nav.Link>
+                    <NavLink className = "btn" href="/">Home</NavLink>
+                    <NavLink className = "btn" href="../components/Movie ">Movie</NavLink>
                     <NavDropdown title = "Link" id = " navbarScrollingDropdown">
                         <NavDropdown.Item href= "#action3">Action</NavDropdown.Item>
                         <NavDropdown.Divider />
