@@ -5,11 +5,8 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import {Home} from "../components/Home";
-import {Movie} from "../components/Movie";
-import { NavLink } from "react-router-dom";
 
-const Navgationbar = () => {
+const navBar = () => {
     return(
         <>
         <Navbar bg = "light" expand = "lg" className="Navbar">
@@ -22,8 +19,8 @@ const Navgationbar = () => {
                     style={{ maxHeight: '100px'}}
                     navbarScroll
                     >
-                    <NavLink className = "btn" href="/">Home</NavLink>
-                    <NavLink className = "btn" href="../components/Movie ">Movie</NavLink>
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="../Movie ">Movie</Nav.Link>
                     <NavDropdown title = "Link" id = " navbarScrollingDropdown">
                         <NavDropdown.Item href= "#action3">Action</NavDropdown.Item>
                         <NavDropdown.Divider />
@@ -55,4 +52,4 @@ const Navgationbar = () => {
     );
 }
 
-export default Navgationbar;
+export default navBar;
