@@ -37,6 +37,15 @@ const MyNavBar = () => {
                         Link
                     </Nav.Link>
                     </Nav>
+                    <NavDropdown title = "SearchType" id = "SearchTypeID">
+                        <NavDropdown.Item href="Best Match">Best Match</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="Simple Match">Simple Match</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="Name Match">Name Match</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="Structured Match">Structured Match</NavDropdown.Item>
+                    </NavDropdown>
                     <Form className="d-flex">
                         <Form.Control
                         type = "search"

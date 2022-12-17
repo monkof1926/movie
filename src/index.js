@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {Home} from './components/Home';
 import {Movie} from './components/Movie';
 import MyNavBar from './object/MyNavBar';
+import { BestMatchSearch } from './components/BestMatchSearch';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,6 +18,7 @@ root.render(
         <Route path='/'    element = {<MyNavBar />} >
           <Route path='/Home'         element = {<Home/>} />
           <Route path='/Movie' element = {<Movie />} />
+          <Route path='/BestMatchSearch' element = {<BestMatchSearch />} />
         </Route>
       </Routes>
       <App />
