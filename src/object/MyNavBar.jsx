@@ -21,7 +21,7 @@ const MyNavBar = () => {
                     navbarScroll
                     >
                     <Nav.Link href="/SearchView">Search</Nav.Link>
-                    <Nav.Link href="/Login">Search</Nav.Link>
+                    <Nav.Link href="/Login">Login</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

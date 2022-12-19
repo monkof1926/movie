@@ -29,7 +29,6 @@ const Login = () => {
     return(
 
         <Form>
-        //Form til indførsel af email
             <Form.Group classname ="mb-3" controlID ="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control 
@@ -43,8 +42,6 @@ const Login = () => {
                     Please enter your email
                 </Form.Text>
             </Form.Group>
-
-        //Form til indførsel af password
             <Form.Group classname ="mb-3" controlID ="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control 
