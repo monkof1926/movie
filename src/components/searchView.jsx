@@ -117,7 +117,7 @@ const SearchView = () => {
 
   return (
     <div>
-      <p>SearchViewPage</p>
+      <p>Choose one of the four search options!</p>
       <select value={selectedOption} onChange={handleChangeOption}>
         <option value="defualt">Choose Search Type</option>
         <option value="option1">Simple "1 Word"</option>
