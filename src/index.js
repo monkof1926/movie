@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {Home} from './components/Home';
 import {Movie} from './components/Movie';
 import MyNavBar from './object/MyNavBar';
-import { BestMatchSearch } from './components/BestMatchSearch';
+import {SearchView} from './components/SearchView';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,8 +17,8 @@ root.render(
       <Routes>
         <Route path='/'    element = {<MyNavBar />} >
           <Route path='/Home'         element = {<Home/>} />
-          <Route path='/Movie' element = {<Movie />} />
-          <Route path='/BestMatchSearch' element = {<BestMatchSearch />} />
+          <Route path="/Movie/:id" element={<Movie />} />
+          <Route path='/SearchView' element = {<SearchView />} />
         </Route>
       </Routes>
       <App />

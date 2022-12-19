@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from "react";
-import MyNavBar from "../object/MyNavBar";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
+import { useParams } from "react-router-dom";
+
 
 const Movie = () => {
-  const [title, setTitle] = useState(''); // Declare a state variable to store the movie title
+  const [title, setTitle] = useState('');
   const [poster, setPoster] = useState('');
   const [plot, setPlot] = useState('');
   const [startYear, setStartYear] = useState(''); 
   const [endYear, setEndYear] = useState('');
   const [ratingAvergeTitle, setRatingAvergeTitle] = useState('');
+  const { id } = useParams();
   
-  // Use the useEffect hook to fetch the movie data when the component is rendered
+  //useEffect hook to fetch the data
   useEffect(() => {
     const fetchMovie = async () => {
-      // The URL for the API endpoint that returns the data for the movie
-      const url = "https://localhost:5001/api/movie/tt16210266"; // We have to change the tt16210266 to be dynamic, instead of static.
+      // The URL uses id to render the correct movie from search.
+      const url = `https://localhost:5001/api/movie/${id}`;
 
-      // Fetch the movie data from the API
       const response = await fetch(url);
 
-      // Parse the JSON response from the API
       const movie = await response.json();
 
-      // Update the state
+      //Update the state
       setTitle(movie.title);
       setPoster(movie.poster);
       setPlot(movie.plot);
@@ -39,23 +39,28 @@ const Movie = () => {
 
   return (
     <div>
-      <h1>Home</h1>
-
+      <h1>{title}</h1>
+  
       <Container fluid className="text-center">
-        <Row>{title}</Row>
         <Row>
           <img src={poster} alt={title} style={{ width: '300px', height: '400px' }} />
         </Row>
-        <Row>{plot}</Row>
+        <Row>
+          <p>{plot}</p>
+        </Row>
         <Row>
           <Col>
             <Stack gap={3}>
-              <div classname="bg-light border">{startYear}</div>
-              <div classname="bg-light border">{endYear}</div>
+              <div className={endYear ? "bg-light border" : ""}>{startYear}</div>
+              <div className={endYear ? "" : "d-none"}>{endYear}</div>
             </Stack>
           </Col>
-          <Col>Rating: {ratingAvergeTitle}</Col>
-          <Col>ButtonForBookMark</Col>
+          <Col>
+            <p>Rating: {ratingAvergeTitle}</p>
+          </Col>
+          <Col>
+            <button>ButtonForBookMark</button>
+          </Col>
         </Row>
       </Container>
     </div>
