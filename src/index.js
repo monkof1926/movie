@@ -9,6 +9,7 @@ import {Movie} from './components/Movie';
 import MyNavBar from './object/MyNavBar';
 import {SearchView} from './components/SearchView';
 import { Person } from './components/Person';
+import Login from './components/Login';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,6 +22,8 @@ root.render(
           <Route path="/Movie/:id" element={<Movie />} />
           <Route path="/Person/:id" element={<Person />} />
           <Route path='/SearchView' element = {<SearchView />} />
+          <Route path='/Login' element = {<Login />} />
+
         </Route>
       </Routes>
       <App />
