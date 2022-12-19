@@ -19,7 +19,7 @@ const Movie = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       // The URL uses id to render the correct movie from search.
-      const url = `https://localhost:5001/api/movie/${id}`;
+      const url = `https://localhost:7101/api/movie/${id}`;
 
       const response = await fetch(url);
 
@@ -39,11 +39,10 @@ const Movie = () => {
 
   return (
     <div>
-      <h1>{title}</h1>
-  
       <Container fluid className="text-center">
-        <Row>
-          <img src={poster} alt={title} style={{ width: '300px', height: '400px' }} />
+      <h1>{title}</h1>
+        <Row className="align-items-center">
+        <img src={poster} alt={title} className="mx-auto" style={{ width: '300px', height: '400px' }} />
         </Row>
         <Row>
           <p>{plot}</p>
