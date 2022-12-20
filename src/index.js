@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {Home} from './components/Home';
 import {Movie} from './components/Movie';
 import MyNavBar from './object/MyNavBar';
-import {SearchView} from './components/SearchView';
+import {SearchView} from './components/searchView';
 import { Person } from './components/Person';
 import Login from './components/Login';
 
