@@ -21,7 +21,7 @@ const Home = () => {
       "https://localhost:7101/api/movie/tt0266697", //Kill Bill URL
       "https://localhost:7101/api/movie/tt1375666", //Inception URL
       "https://localhost:7101/api/movie/tt0304141", //Harry Potter URL
-      "https://localhost:7101/api/movie/tt0292577"  //GB URL
+      "https://localhost:7101/api/movie/tt0292577"  //GB URL 
     ];
 
     const fetchData = async () => {
